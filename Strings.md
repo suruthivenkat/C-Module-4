@@ -15,6 +15,23 @@ To write a C program that checks if an input character is an **alphabet** (eithe
    - If `ch` is between `'a'` and `'z'` (ASCII 97–122).
 4. If the condition is true, print `"Alphabet"`.
 5. Otherwise, print `"Not an Alphabet"`.
-
+## Program
+```
+#include <stdio.h>
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+        printf("Alphabet\n");
+    } else {
+        printf("Not an Alphabet\n");
+    }
+    return 0;
+}
+```
 ## 🧾 Sample Output
-
+Input:
+Enter a character: G
+Output:
+Alphabet
