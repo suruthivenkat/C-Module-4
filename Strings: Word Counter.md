@@ -12,8 +12,51 @@ To write a C program that counts the total number of words in a given string usi
 4. **Print** the final value of `count`, which represents the total number of words in the string.
 
 ## Program
-Add code Here
+```
+#include <stdio.h>
+int countWords(char str[]) {
+    int i = 0, count = 0;
+    while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n') {
+        i++;
+    }
+    if (str[i] == '\0') 
+        return 0;
+    count = 1; 
+    do {
+        if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n') {
+            while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n') {
+                i++;
+            }
+            if (str[i] != '\0') {
+                count++;
+            } else {
+                break;
+            }
+        } else {
+            i++;
+        }
+    } while (str[i] != '\0');
+    return count;
+}
+
+int main() {
+    char a[100];
+    printf("Enter a string: ");
+    fgets(a, sizeof(a), stdin);  
+    int words = countWords(a);
+    printf("Total number of words: %d\n", words);
+    return 0;
+}
+```
+
 
 ## Output
+```
+Enter a string:   This    is   a    test string.
+Total number of words: 5
+```
+
+
 
 ## Result
+The above programme is implemented and executed.
